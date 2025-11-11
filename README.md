@@ -8,7 +8,7 @@ Keycloak, SSO, optimized CI/CD with GitHub Actions & AWS, and contributed to
 
 🛠 Tech I love working with: Java, Spring, MySQL, Docker, Kafka, WebSockets, MQTT, Web3J and so on.
 
-🌍 To know more, check [my profile](https://laziestcoder.github.io) at a glance
+🌍 To know more, check [my profile](https://towfiq-ul.github.io) at a glance
 
 - 🔭 I’m currently working in **JAVA** :coffee: **(SPRING-BOOT)** :herb: :leaves:
 - 👯 I’m looking to collaborate on anything... :revolving_hearts:
