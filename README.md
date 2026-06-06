@@ -1,15 +1,42 @@
-### Assalamu Aalaikum. Peace be upon you! 
-👋 I’m **Towfiqul Islam**, a Java backend engineer passionate about system design, distributed architecture, and 
-emerging tech like IoT and Blockchain. **I'm a Learner, Solution Developer, Coder and Linux 🐧 Lover.**
+### Assalamu Aalaikum. Peace be upon you!
 
-🚀 Built scalable applications with Spring Boot, PostgreSQL/MySQL, Redis, and RabbitMQ. Integrated secure auth via 
-Keycloak, SSO, optimized CI/CD with GitHub Actions & AWS, and contributed to 
-[ThingsBoard](https://github.com/thingsboard/thingsboard).
+👋 I'm **Towfiqul Islam**, a Senior Software Engineer specializing in **distributed systems, fintech backends, and cloud-native architecture**. I build high-throughput event-driven platforms using Java/Spring Boot, Kafka, AWS, and Kubernetes — currently working on core payment infrastructure at Bangladesh's leading MFS platform.
 
-🛠 Tech I love working with: Java, Spring, MySQL, Docker, Kafka, WebSockets, MQTT, Web3J and so on.
+## 🚀 Professional Overview
 
-🌍 To know more, check [my profile](https://towfiq-ul.github.io) at a glance
+Accomplished engineer with over 7 years of experience designing and delivering scalable enterprise solutions. Proven track record of optimizing database performance by 40% and contributing to high-impact fintech and IoT domains.
 
-- 🔭 I’m currently working in **JAVA** :coffee: **(SPRING-BOOT)** :herb: :leaves:
-- 👯 I’m looking to collaborate on anything... :revolving_hearts:
-- 💬 [Ask me](mailto:towfiq.106@gmail.com) about anything you want to know... :question:
+- **Live Portfolio:** [towfiq-ul.github.io](https://towfiq-ul.github.io)
+- **LinkedIn:** [towfiq106](https://www.linkedin.com/in/towfiq106)
+- **Stack Overflow:** [towfiqul-islam](https://stackoverflow.com/users/6688908/towfiqul-islam)
+
+## 🛠 Tech Stack
+
+*   **Backend:** Java (Spring Boot, Spring Cloud), PHP (Laravel), Microservices, REST APIs
+*   **Data & Messaging:** Kafka, RabbitMQ, PostgreSQL, MySQL, Oracle, Redis, DynamoDB, Cassandra
+*   **Cloud & DevOps:** AWS, Docker, Kubernetes, Jenkins, GitHub Actions, CI/CD
+*   **Architecture:** Event-Driven Systems, Domain-Driven Design (DDD), Clean Architecture
+
+## 📈 Key Highlights
+
+*   **Fintech Scale:** Architecture design for bK-MFS platforms handling millions of daily transactions.
+*   **Performance:** Achieved 40% improvement through DB optimization and Redis caching.
+*   **Open Source:** Merged contributions to the **ThingsBoard** IoT platform.
+*   **Leadership:** Mentored junior engineers and established CI/CD standards improving productivity by 30%.
+
+## 💼 Work Experience
+
+*   **Senior Software Engineer** @ Exabyting | May 2024 – Present
+*   **Software Engineer** @ SELISE (Zürich, Remote) | Nov 2021 – Apr 2024
+*   **Software Engineer** @ Exabyting | Dec 2019 – Nov 2021
+*   **Java Software Engineer** @ TechServe4U (USA, Remote) | May 2021 – Oct 2021
+
+## 📂 Featured Projects
+
+*   **Tesenso MW:** Multi-tenant IoT platform handling millions of data points using Spring Boot and Kafka.
+*   **FDPS:** Financial Document Processing System using Apache Camel and ActiveMQ.
+*   **Urstamm:** Blockchain-integrated sustainable wood sourcing supply chain solution.
+*   **Agent App MW:** High-availability middleware for bK-MFS Agent ecosystem.
+
+---
+© 2018-2026 Towfiqul Islam. Crafted with passion and precision.
