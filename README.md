@@ -4,7 +4,7 @@
 
 ## 🚀 Professional Overview
 
-Accomplished engineer with over 7 years of experience designing and delivering scalable enterprise solutions. Proven track record of optimizing database performance by 40% and contributing to high-impact fintech and IoT domains.
+Accomplished engineer with over 7+ years of experience designing and delivering scalable enterprise solutions. Proven track record of optimizing database performance by 40% and contributing to high-impact fintech and IoT domains.
 
 - **Live Portfolio:** [towfiq-ul.github.io](https://towfiq-ul.github.io)
 - **LinkedIn:** [towfiq106](https://www.linkedin.com/in/towfiq106)
@@ -12,10 +12,11 @@ Accomplished engineer with over 7 years of experience designing and delivering s
 
 ## 🛠 Tech Stack
 
-*   **Backend:** Java (Spring Boot, Spring Cloud), PHP (Laravel), Microservices, REST APIs
+*   **Backend:** Java (Spring Boot), PHP (Laravel), Python, Go, Microservices, REST APIs
 *   **Data & Messaging:** Kafka, RabbitMQ, PostgreSQL, MySQL, Oracle, Redis, DynamoDB, Cassandra
 *   **Cloud & DevOps:** AWS, Docker, Kubernetes, Jenkins, GitHub Actions, CI/CD
 *   **Architecture:** Event-Driven Systems, Domain-Driven Design (DDD), Clean Architecture
+*   **Frontend:** React, Jquery
 
 ## 📈 Key Highlights
 
@@ -33,6 +34,7 @@ Accomplished engineer with over 7 years of experience designing and delivering s
 
 ## 📂 Featured Projects
 
+*   **Customer App MW:** High-availability middleware for bK-MFS Customer ecosystem.
 *   **Tesenso MW:** Multi-tenant IoT platform handling millions of data points using Spring Boot and Kafka.
 *   **FDPS:** Financial Document Processing System using Apache Camel and ActiveMQ.
 *   **Urstamm:** Blockchain-integrated sustainable wood sourcing supply chain solution.

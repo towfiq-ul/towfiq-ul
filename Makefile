@@ -3,38 +3,12 @@
 # Variables
 TAG_NUMBER_FILE = '.tag_number'
 BRANCH_NAME ?= master
-#POM_FILE = pom.xml
-#ARTIFACT_ID ?= test-artifact
 
 # Prevent make from treating the targets as files
-#.PHONY: all update_version commit_changes create_tag push_changes push_tags clean help
 .PHONY: all increment_version commit_changes create_tag push_changes push_tags clean help
 
 # Default target
-#all: update_version commit_changes create_tag push_changes push_tags
 all: increment_version commit_changes create_tag push_changes push_tags
-
-## Update the version for the specified artifactId in the pom.xml
-#update_version:
-#	@git checkout $(BRANCH_NAME)
-#	@git pull
-#	@if [ -z "$(TAG_NUMBER)" ]; then \
-#    		echo "Error: No tag specified. Usage: make update_version <tag_number>"; \
-#    		exit 1; \
-#	fi
-#	@echo "Updating version to $(TAG_NUMBER) for artifactId $(ARTIFACT_ID) in $(POM_FILE)..."
-#	# Remove prefix 'v' for version if it starts with 'v'
-#	@VERSION=$$(echo "$(TAG_NUMBER)" | sed 's/^v//'); \
-#	echo "Updating version to $$VERSION for artifactId $(ARTIFACT_ID) in $(POM_FILE)..."; \
-#	awk -v version="$$VERSION" 'BEGIN {updated=0} \
-#    	     /<artifactId>$(ARTIFACT_ID)<\/artifactId>/ {print; getline; sub(/<version>.*<\/version>/, "<version>" version "</version>"); updated=1} \
-#    	     {print} \
-#    	     END {if (!updated) {exit 1}}' $(POM_FILE) > $(POM_FILE).tmp && mv $(POM_FILE).tmp $(POM_FILE); \
-#	if [ $$? -ne 0 ]; then \
-#		echo "Error: Could not find artifactId $(ARTIFACT_ID) in $(POM_FILE)."; \
-#		exit 1; \
-#	fi
-#	@echo "Version updated to $(TAG_NUMBER) for artifactId $(ARTIFACT_ID)."
 
 # Increment version number
 increment_version:
@@ -59,9 +33,9 @@ increment_version:
 commit_changes:
 	@$(call check_tag_number) \
     rm $(TAG_NUMBER_FILE); \
-#	git add .; \
-#	git commit -m "updated to $$TAG_NUMBER"; \
-#	echo "Changes committed with tag $$TAG_NUMBER."; \
+	git add .; \
+	git commit -m "updated to $$TAG_NUMBER"; \
+	echo "Changes committed with tag $$TAG_NUMBER."; \
 	echo "$$TAG_NUMBER" > $(TAG_NUMBER_FILE);
 
 # Create a git tag with the given tag number
@@ -97,9 +71,8 @@ help:
 	@echo "Usage:"
 	@echo "  make update_version <tag_number>"
 	@echo "Targets:"
-	@echo "  all             	Updates version, commits changes, creates a tag, and pushes changes."
+	@echo "  all             	increment version, commit changes, create tag, push changes, and push tags."
 	@echo "  increment_version  Increments the version in by 1 patch level."
-	@#echo "  update_version  Updates the version in pom.xml."
 	@echo "  commit_changes  	Commits the changes with a message."
 	@echo "  create_tag      	Creates a git tag."
 	@echo "  push_changes    	Pushes changes to the origin branch."
