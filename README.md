@@ -16,7 +16,7 @@ Accomplished engineer with over 7+ years of experience designing and delivering 
 *   **Data & Messaging:** Kafka, RabbitMQ, PostgreSQL, MySQL, Oracle, Redis, DynamoDB, Cassandra
 *   **Cloud & DevOps:** AWS, Docker, Kubernetes, Jenkins, GitHub Actions, CI/CD
 *   **Architecture:** Event-Driven Systems, Domain-Driven Design (DDD), Clean Architecture
-*   **Frontend:** React, Jquery
+*   **Frontend:** Thymeleaf, Blade, React, Jquery, Bootstrap
 
 ## 📈 Key Highlights
 
