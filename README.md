@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://www.linkedin.com/in/towfiq106">
+    <img src="https://img.shields.io/badge/🟢_Open_to_Work-Senior%20Software%20Engineer%20roles-brightgreen?style=for-the-badge" alt="Open to Work">
+  </a>
+</p>
+
 ### Assalamu Aalaikum. Peace be upon you! 👋
 
 I'm **Towfiqul Islam**, a Senior Software Engineer building **distributed systems, fintech backends, and cloud-native platforms**. 7+ years designing high-throughput, event-driven systems on Java/Spring Boot, Kafka, AWS, and Kubernetes — currently on core payment infrastructure at **Bangladesh's #1 Unicorn MFS platform**.
@@ -61,4 +67,11 @@ I'm **Towfiqul Islam**, a Senior Software Engineer building **distributed system
 *   **[Aerotia International](https://aerotia.com):** Corporate website & CMS for an aviation & marine solutions distributor.
 
 ---
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/towfiq106">
+    <img src="https://img.shields.io/badge/🟢_Open_to_Work-Senior%20Software%20Engineer%20roles-brightgreen?style=for-the-badge" alt="Open to Work">
+  </a>
+</p>
+
 © 2018-2026 Towfiqul Islam. Crafted with passion and precision.
