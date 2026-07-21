@@ -67,11 +67,4 @@ I'm **Towfiqul Islam**, a Senior Software Engineer building **distributed system
 *   **[Aerotia International](https://aerotia.com):** Corporate website & CMS for an aviation & marine solutions distributor.
 
 ---
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/towfiq106">
-    <img src="https://img.shields.io/badge/🟢_Open_to_Work-Senior%20Software%20Engineer%20roles-brightgreen?style=for-the-badge" alt="Open to Work">
-  </a>
-</p>
-
 © 2018-2026 Towfiqul Islam. Crafted with passion and precision.
