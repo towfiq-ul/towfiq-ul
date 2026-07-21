@@ -3,9 +3,10 @@
 # Variables
 TAG_NUMBER_FILE = '.tag_number'
 BRANCH_NAME ?= master
+MD_FILE ?= README.md
 
 # Prevent make from treating the targets as files
-.PHONY: all increment_version commit_changes create_tag push_changes push_tags clean help
+.PHONY: all increment_version commit_changes create_tag push_changes push_tags clean show help
 
 # Default target
 all: increment_version commit_changes create_tag push_changes push_tags
@@ -58,6 +59,11 @@ push_tags:
 	@git push --tags
 	@echo "All tags pushed to remote."
 
+# Render a Markdown file (default README.md) to HTML and open it in the browser
+show:
+	@python3 -c "import markdown_it" 2>/dev/null || { echo "Missing dependency: pip install markdown-it-py"; exit 1; }
+	@python3 scripts/render_markdown.py $(MD_FILE)
+
 # Clean up
 clean:
 	@echo "Cleaning up..."
@@ -77,6 +83,7 @@ help:
 	@echo "  create_tag      	Creates a git tag."
 	@echo "  push_changes    	Pushes changes to the origin branch."
 	@echo "  push_tags       	Pushes all tags to the remote repository."
+	@echo "  show            	Renders MD_FILE (default README.md) to HTML and opens it in the browser."
 	@echo "  clean           	Resets changes to HEAD."
 
 # Handle arguments for the update_version target
