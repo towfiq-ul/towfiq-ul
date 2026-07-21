@@ -1,32 +1,47 @@
-### Assalamu Aalaikum. Peace be upon you!
+### Assalamu Aalaikum. Peace be upon you! 👋
 
-👋 I'm **Towfiqul Islam**, a Senior Software Engineer specializing in **distributed systems, fintech backends, and cloud-native architecture**. I build high-throughput event-driven platforms using Java/Spring Boot, Kafka, AWS, and Kubernetes — currently working on core payment infrastructure at Bangladesh's leading MFS platform.
+I'm **Towfiqul Islam**, a Senior Software Engineer building **distributed systems, fintech backends, and cloud-native platforms**. 7+ years designing high-throughput, event-driven systems on Java/Spring Boot, Kafka, AWS, and Kubernetes — currently on core payment infrastructure at **Bangladesh's #1 Unicorn MFS platform**.
 
-## 🚀 Professional Overview
-
-Accomplished engineer with over 7+ years of experience designing and delivering scalable enterprise solutions. Proven track record of optimizing database performance by 40% and contributing to high-impact fintech and IoT domains.
-
-- **Live Portfolio:** [towfiq-ul.github.io](https://towfiq-ul.github.io)
-- **LinkedIn:** [towfiq106](https://www.linkedin.com/in/towfiq106)
-- **Stack Overflow:** [towfiqul-islam](https://stackoverflow.com/users/6688908/towfiqul-islam)
-- **Medium:** [@towfiq106](https://medium.com/@towfiq106)
+[![Portfolio](https://img.shields.io/badge/Portfolio-towfiq--ul.github.io-2ea44f?style=flat&logo=googlechrome&logoColor=white)](https://towfiq-ul.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-towfiq106-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/towfiq106)
+[![Stack Overflow](https://img.shields.io/stackexchange/stackoverflow/r/6688908?style=flat&logo=stackoverflow&logoColor=white&label=Stack%20Overflow)](https://stackoverflow.com/users/6688908/towfiqul-islam)
+[![Medium](https://img.shields.io/badge/Medium-%40towfiq106-black?style=flat&logo=medium&logoColor=white)](https://medium.com/@towfiq106)
 
 ## 🛠 Tech Stack
 
-*   **Backend:** Java (Spring Boot), PHP (Laravel), Python, Go, Microservices, REST APIs
-*   **Data & Messaging:** Kafka, RabbitMQ, PostgreSQL, MySQL, Oracle, Redis, DynamoDB, Cassandra
-*   **Cloud & DevOps:** AWS, Docker, Kubernetes, Jenkins, GitHub Actions, CI/CD
-*   **AI:** LLM integration, RAG, OpenSearch/vector search, sentence-transformers, Redis caching
-*   **Architecture:** Event-Driven Systems, Domain-Driven Design (DDD), Clean Architecture
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP%2FLaravel-777BB4?style=flat&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat&logo=apachekafka&logoColor=white)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat&logo=rabbitmq&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+
+*   **Architecture:** Event-Driven Systems, Domain-Driven Design (DDD), Clean Architecture, Microservices
+*   **AI:** LLM integration, RAG, OpenSearch/vector search, sentence-transformers
 *   **Frontend:** Thymeleaf, Blade, React, jQuery, Bootstrap
 
 ## 📈 Key Highlights
 
-*   **Fintech Scale:** Architecture design for bK-MFS platforms handling millions of daily transactions.
-*   **Performance:** Achieved 40% improvement through DB optimization and Redis caching.
-*   **Open Source:** Author of **[laravel-gitstamp](https://github.com/m-tech-org/laravel-gitstamp)** (MIT, CI-tested across Laravel 9–12); merged contributions to the **ThingsBoard** IoT platform.
-*   **AI Engineering:** Built a [RAG-based natural language search engine over S3 documents](https://medium.com/@towfiq106/a-natural-language-search-engine-over-s3-documents-d6321704290d) and a [Hardened LLM edge proxy](https://medium.com/@towfiq106/from-a-leaked-api-key-in-the-browser-to-a-hardened-edge-proxy-building-the-ai-assistant-on-my-3684973ecd3d).
+*   **Fintech Scale:** Architecture design for Bangladesh's #1 Unicorn MFS platform, handling millions of daily transactions.
+*   **Performance:** 40% improvement through DB optimization and Redis caching.
+*   **AI Engineering:** Built a [RAG-based natural language search engine over S3 documents](https://medium.com/@towfiq106/a-natural-language-search-engine-over-s3-documents-d6321704290d) and a [hardened LLM edge proxy](https://medium.com/@towfiq106/from-a-leaked-api-key-in-the-browser-to-a-hardened-edge-proxy-building-the-ai-assistant-on-my-3684973ecd3d).
 *   **Leadership:** Mentored junior engineers and established CI/CD standards improving productivity by 30%.
+
+## 🌱 Open Source & Contributions
+
+[![Packagist Version](https://img.shields.io/packagist/v/m-tech-org/laravel-gitstamp?label=laravel-gitstamp)](https://packagist.org/packages/m-tech-org/laravel-gitstamp)
+[![Tests](https://img.shields.io/github/actions/workflow/status/m-tech-org/laravel-gitstamp/run-tests.yml?branch=develop&label=tests)](https://github.com/m-tech-org/laravel-gitstamp/actions/workflows/run-tests.yml)
+[![License](https://img.shields.io/packagist/l/m-tech-org/laravel-gitstamp)](https://github.com/m-tech-org/laravel-gitstamp/blob/develop/LICENSE.md)
+
+*   **[laravel-gitstamp](https://github.com/m-tech-org/laravel-gitstamp)** — Author. Deploy-time git commit/date stamping for Laravel apps with no build pipeline. Published on Packagist, supports Laravel 9–12, CI-tested across 10–12.
+*   **[jmbus](https://github.com/towfiq-ul/jmbus)** — Author. JNA-based Java wrapper around the [libmbus](https://github.com/rscada/libmbus) C library for the M-Bus (Meter-Bus) protocol.
+*   **[ThingsBoard](https://github.com/thingsboard/thingsboard)** — Merged [PR #6614](https://github.com/thingsboard/thingsboard/pull/6614) to the open-source IoT platform.
 
 ## 💼 Work Experience
 
@@ -37,12 +52,10 @@ Accomplished engineer with over 7+ years of experience designing and delivering 
 
 ## 📂 Featured Projects
 
-*   **[laravel-gitstamp](https://github.com/m-tech-org/laravel-gitstamp):** Laravel package embedding git metadata into builds — MIT, CI-tested across Laravel 9–12.
 *   **[AI Query System from S3 Data](https://github.com/towfiq-ul/ai-query-system-from-s3-data):** RAG pipeline for natural language search over S3 documents ([writeup](https://medium.com/@towfiq106/a-natural-language-search-engine-over-s3-documents-d6321704290d)).
 *   **[Portfolio Site](https://towfiq-ul.github.io):** Live portfolio, backed by a [hardened LLM edge proxy](https://medium.com/@towfiq106/from-a-leaked-api-key-in-the-browser-to-a-hardened-edge-proxy-building-the-ai-assistant-on-my-3684973ecd3d) for its AI assistant.
-*   **Customer App MW:** High-availability middleware for bK-MFS Customer ecosystem.
+*   **MFS Customer App Middleware:** High-availability middleware for Bangladesh's #1 Unicorn MFS platform's customer ecosystem.
 *   **Tesenso MW:** Multi-tenant IoT platform handling millions of data points using Spring Boot and Kafka.
-*   **FDPS:** Financial Document Processing System using Apache Camel and ActiveMQ.
 
 ---
 © 2018-2026 Towfiqul Islam. Crafted with passion and precision.
