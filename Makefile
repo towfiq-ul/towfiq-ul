@@ -1,106 +1,73 @@
-# Makefile
+# Makefile — release & preview tooling for the towfiq-ul/towfiq-ul profile README.
+#
+# Quick start:
+#   make show              preview README.md rendered in the browser
+#   make status            check for stray untracked files before releasing
+#   make all               commit FILES, tag the next patch version, and push
 
-# Variables
-TAG_NUMBER_FILE = '.tag_number'
+SHELL       := /bin/bash
+.SHELLFLAGS := -eu -o pipefail -c
+.DEFAULT_GOAL := help
+
+# --- Configuration (override on the command line, e.g. `make all FILES="README.md Makefile"`) ---
 BRANCH_NAME ?= master
-MD_FILE ?= README.md
+MD_FILE     ?= README.md
+FILES       ?= README.md
 
-# Prevent make from treating the targets as files
-.PHONY: all increment_version commit_changes create_tag push_changes push_tags clean show help
+# --- Derived version numbers (computed once per invocation, no state file needed) ---
+CURRENT_TAG := $(shell git describe --tags --abbrev=0 2>/dev/null || echo v0.0.0)
+NEXT_TAG    := $(shell echo $(CURRENT_TAG) | awk -F'[v.]' '{printf "v%d.%d.%d", $$2, $$3, $$4+1}')
 
-# Default target
-all: increment_version commit_changes create_tag push_changes push_tags
+.PHONY: all commit tag push version status show clean help
 
-# Increment version number
-increment_version:
-	@latest_tag=$$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0"); \
-	if [ "$$latest_tag" = "v0.0.0" ]; then \
-		echo "Tags not found! Using default version v0.0.0"; \
+all: commit tag push ## Full release: commit FILES, tag the next patch version, and push branch + tags
+
+commit: ## Stage FILES (default: README.md) and commit as "updated to <next tag>"
+	@if git diff --quiet -- $(FILES) && git diff --cached --quiet -- $(FILES); then \
+		echo "No changes in FILES=$(FILES); nothing to commit."; \
 	else \
-		echo "Tags found: $$latest_tag"; \
-	fi; \
-	version=$$(echo "$$latest_tag" | sed 's/^v//'); \
-	echo "Incrementing after version $$version"; \
-	set -- $$(echo "$$version" | tr '.' ' '); \
-	major=$$1; minor=$$2; patch=$$3; \
-	echo "Current version: Major:$$major | Minor:$$minor | Patch:$$patch"; \
-	new_patch=$$((patch + 1)); \
-	TAG_NUMBER="v$$major.$$minor.$$new_patch"; \
-	echo "New tag: $$TAG_NUMBER"; \
-	echo "$$TAG_NUMBER" > $(TAG_NUMBER_FILE);
+		git add $(FILES); \
+		git commit -m "updated to $(NEXT_TAG)"; \
+		echo "Committed as $(NEXT_TAG)."; \
+	fi
 
+tag: ## Create the next patch-version git tag on HEAD
+	git tag "$(NEXT_TAG)"
+	@echo "Tagged $(NEXT_TAG)."
 
-# Commit the changes with the given message
-commit_changes:
-	@$(call check_tag_number) \
-    rm $(TAG_NUMBER_FILE); \
-	git add .; \
-	git commit -m "updated to $$TAG_NUMBER"; \
-	echo "Changes committed with tag $$TAG_NUMBER."; \
-	echo "$$TAG_NUMBER" > $(TAG_NUMBER_FILE);
+push: ## Pull, push $(BRANCH_NAME), and push tags to origin
+	git pull origin $(BRANCH_NAME)
+	git push -u origin $(BRANCH_NAME)
+	git push --tags
+	@echo "Pushed $(BRANCH_NAME) and tags to origin."
 
-# Create a git tag with the given tag number
-create_tag:
-	@$(call check_tag_number) \
-	git tag "$$TAG_NUMBER"; \
-	echo "Tag $$TAG_NUMBER created."; \
-	rm $(TAG_NUMBER_FILE);
+version: ## Show the current tag and the next patch version (no side effects)
+	@echo "Current tag: $(CURRENT_TAG)"
+	@echo "Next tag:    $(NEXT_TAG)"
 
-
-# Push the changes to the origin branch
-push_changes:
-	@git pull origin $(BRANCH_NAME)
+status: ## Show git status and flag untracked files 'make all' would NOT stage
 	@git status
-	@git push -u origin $(BRANCH_NAME)
-	@echo "Changes pushed to branch $(BRANCH_NAME)."
+	@untracked=$$(git status --porcelain | grep '^??' | awk '{print $$2}' || true); \
+	if [ -n "$$untracked" ]; then \
+		echo ""; \
+		echo "Untracked files present (only FILES=$(FILES) get committed by 'make all'):"; \
+		echo "$$untracked" | sed 's/^/  /'; \
+	fi
 
-# Push all tags to the remote repository
-push_tags:
-	@git push --tags
-	@echo "All tags pushed to remote."
-
-# Render a Markdown file (default README.md) to HTML and open it in the browser
-show:
+show: ## Render MD_FILE (default README.md) to HTML and open it in the browser
 	@python3 -c "import markdown_it" 2>/dev/null || { echo "Missing dependency: pip install markdown-it-py"; exit 1; }
-	@python3 scripts/render_markdown.py $(MD_FILE)
+	python3 scripts/render_markdown.py $(MD_FILE)
 
-# Clean up
-clean:
-	@echo "Cleaning up..."
-	@git reset --soft HEAD
-	@echo "Cleanup done."
-	@rm $(TAG_NUMBER_FILE)
+clean: ## Soft-reset the working tree to HEAD (keeps untracked files untouched)
+	git reset --soft HEAD
 
-
-# Help message
-help:
-	@echo "Usage:"
-	@echo "  make update_version <tag_number>"
+help: ## Show this help message
+	@echo "Usage: make <target> [VAR=value ...]"
+	@echo ""
 	@echo "Targets:"
-	@echo "  all             	increment version, commit changes, create tag, push changes, and push tags."
-	@echo "  increment_version  Increments the version in by 1 patch level."
-	@echo "  commit_changes  	Commits the changes with a message."
-	@echo "  create_tag      	Creates a git tag."
-	@echo "  push_changes    	Pushes changes to the origin branch."
-	@echo "  push_tags       	Pushes all tags to the remote repository."
-	@echo "  show            	Renders MD_FILE (default README.md) to HTML and opens it in the browser."
-	@echo "  clean           	Resets changes to HEAD."
-
-# Handle arguments for the update_version target
-%:
-	@:
-
-define check_tag_number
-@if [ -f $(TAG_NUMBER_FILE) ]; then \
-    TAG_NUMBER=$$(cat $(TAG_NUMBER_FILE)); \
-    if [ -n "$$TAG_NUMBER" ]; then \
-        echo "Using tag number from file $(TAG_NUMBER_FILE): $$TAG_NUMBER"; \
-    else \
-        echo "Error: $(TAG_NUMBER_FILE) is empty. Run 'make increment_version' first."; \
-        exit 0; \
-    fi \
-else \
-    echo "Error: $(TAG_NUMBER_FILE) file not found. Run 'make increment_version' first."; \
-    exit 0; \
-fi;
-endef
+	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z_-]+:.*##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
+	@echo ""
+	@echo "Variables:"
+	@echo "  BRANCH_NAME   target branch for push (default: master)"
+	@echo "  FILES         files staged/committed by 'commit'/'all' (default: README.md)"
+	@echo "  MD_FILE       markdown file rendered by 'show' (default: README.md)"
